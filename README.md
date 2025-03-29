@@ -14,4 +14,5 @@ Session Admin avec possibilté de modification des produits:
 ![image](https://github.com/user-attachments/assets/93d6ea4b-bb26-4301-95be-ec45447fe791)
 
 Composant de modification du produit :
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/ec386a1a-2347-43e3-bc5c-f8a80c241e72)
+
