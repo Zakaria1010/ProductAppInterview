@@ -1,0 +1,55 @@
+<div class="container">
+    <h2>Products List</h2>
+
+  <!-- Role Switcher -->
+    <mat-card>
+        <mat-card-content>
+          <section class="switch-container">
+            <mat-slide-toggle
+                class="example-margin"
+                [color]="'accent'"
+                [checked]="isAdmin"
+                (change)="toggleRole()"
+                color="primary">
+                {{ isAdmin ? 'Admin' : 'Utilisateur' }}
+            </mat-slide-toggle>
+        </section>
+        </mat-card-content>
+      </mat-card>
+    <ul>
+      <li *ngFor="let product of products" class="product-item">
+        <span>{{ product.name }} - {{ product.price | currency }}</span>
+        <div *ngIf="isAdmin" class="button-container">
+            <button mat-button color="primary" class="button-save" (click)="selectProduct(product); $event.stopPropagation()">Modifier</button>
+        </div>
+      </li>
+    </ul>
+</div>
+
+<div *ngIf="selectedProduct">
+<mat-card class="form-card">
+    <mat-card-title>Edit Product</mat-card-title>
+    <br />
+    <mat-card-content>
+    <form (ngSubmit)="updateProduct(selectedProduct.id, selectedProduct); $event.stopPropagation()">
+        <mat-form-field appearance="fill" class="mdc-text-field">
+        <br />
+        <mat-label>Name</mat-label>
+        <br />
+        <input matInput [(ngModel)]="selectedProduct.name" name="name" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="mdc-text-field">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" [(ngModel)]="selectedProduct.price" name="price" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="mdc-text-field">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="selectedProduct.description" name="description"></textarea>
+        </mat-form-field>
+        <button  mat-raised-button color="success" class="button-save" type="submit">Save</button>
+        <button mat-button type="button" class="button-cancel" (click)="cancel()">Cancel</button>
+    </form>
+    </mat-card-content>
+</mat-card>
+</div>
+  

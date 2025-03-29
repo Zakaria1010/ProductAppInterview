@@ -1,0 +1,82 @@
+# Ignore Visual Studio specific files
+.vs/
+.vscode/
+
+# Ignore build and bin/obj directories
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider-specific files
+.idea/
+*.sln.iml
+
+# Ignore NuGet packages
+packages/
+*.nupkg
+project.lock.json
+project.assets.json
+*.nuspec
+.nuget/
+
+# Ignore build artifacts
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.ilk
+*.lib
+*.exp
+*.iobj
+*.ipdb
+
+# Ignore test results
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.codecoverage
+
+# Ignore logs and generated files
+*.log
+*.tlog
+*.cache
+*.manifest
+*.tmp
+*.csproj.user
+*.rsuser
+*.dotCover
+*.nvuser
+*.pidb
+*.psess
+*.vsp
+*.vspx
+
+# Ignore Resharper files
+_ReSharper.Caches/
+
+# Ignore temporary files
+~$*
+*.swp
+*.swo
+*.bak
+*.orig
+
+# Ignore application-specific files
+appsettings.*.json
+secrets.json
+
+# Ignore Python virtual environments (if used)
+venv/
+.env/
+
+# Ignore dependency manager files
+node_modules/
+product-ui/.angular/cache
+

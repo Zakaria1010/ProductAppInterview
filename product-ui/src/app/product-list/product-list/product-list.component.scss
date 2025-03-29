@@ -1,0 +1,106 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.example-margin {
+  margin: 10px;
+}
+.switch-container {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .product-item span {
+    flex-grow: 1; /* Make sure the product name and price take the remaining space */
+  }
+  
+  .button-container {
+    margin-left: 10px; /* Space between the name/price and button */
+  }
+
+  .form-card {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+  mat-form-field .mat-form-field-infix {
+    padding: 2rem 0; /* Aumenta el padding para hacer los inputs más gruesos */
+  }
+
+button {
+  margin-right: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+
+  li button {
+    margin-left: 1rem;
+  }
+  
+
+.mat-label{
+      font-size: 1.5rem;
+  font-weight: 500;
+}
+mat-form-field .mat-form-field-infix {
+  padding: 2rem 2; /* Reduce el padding vertical */
+}
+
+:host ::ng-deep .mdc-text-field {
+  overflow: visible !important;
+}
+
+:host .mat-raised-button.mat-primary {
+  background-color: blue;
+  color: red;
+}
+
+:host .mat-button.mat-warn {
+  background-color: blue;
+  color: red;
+}
+
+:host .button-save {
+  background-color: forestgreen;
+  color: white;
+}
+
+:host .button-cancel {
+  background-color: red;
+  color: white;
+}
+
+:host .button-new {
+  background-color: deepskyblue;
+  color: white;
+}
+
