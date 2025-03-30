@@ -18,7 +18,8 @@ export class AuthService {
       tap(response => {
         if (response.token) {
           this.jwtToken = response.token;
-          localStorage.setItem('token', response.token);
+          localStorage.setItem('token', response.token)
+          localStorage.setItem('role', response.role);
         }
       })
     );
@@ -26,12 +27,13 @@ export class AuthService {
 
   logout(): void {
     this.jwtToken = null;
-    localStorage.removeItem('token');
+    localStorage.removeItem('token')
+    localStorage.removeItem('role')
   }
 
   getToken(): string | null {
     if (!this.jwtToken) {
-      this.jwtToken = localStorage.getItem('token');
+      this.jwtToken = localStorage.getItem('token')
     }
     return this.jwtToken;
   }
