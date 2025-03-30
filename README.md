@@ -21,7 +21,8 @@ Composant de modification du produit :
 
  Mise a jour de données (persistance de données dans un fichier products.json)
  
-![image](https://github.com/user-attachments/assets/fcc589e7-4dae-4422-8362-59ee57ff87a2)
+![image](https://github.com/user-attachments/assets/91c2537d-c976-4656-a4ad-42ab9e4594e7)
+
 
 
 
