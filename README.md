@@ -16,16 +16,15 @@ Projet product-ui pour l'inteface utilisateur
 
 
 ## Session utilisateur : 
-![image](https://github.com/user-attachments/assets/f470de86-a273-4e46-a95c-41783d485297)
+![image](https://github.com/user-attachments/assets/ae58025e-2491-4bbf-b2aa-ec79c016645c)
 
 ## Session Admin avec possibilté de modification des produits: 
-![image](https://github.com/user-attachments/assets/93d6ea4b-bb26-4301-95be-ec45447fe791)
+![image](https://github.com/user-attachments/assets/8fc76e81-4711-4532-b922-c997ca10af4f)
 
 ## Composant de modification du produit :
-![image](https://github.com/user-attachments/assets/ec386a1a-2347-43e3-bc5c-f8a80c241e72)
+![image](https://github.com/user-attachments/assets/903e3cc1-c466-4441-9469-5686a259b201)
 
  ## Mise a jour de données (persistance de données dans un fichier products.json)
- 
 ![image](https://github.com/user-attachments/assets/91c2537d-c976-4656-a4ad-42ab9e4594e7)
 
 
