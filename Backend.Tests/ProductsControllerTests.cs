@@ -1,6 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using ProductApp.Models;
+using System.IdentityModel.Tokens.Jwt;
 using System.Net;
+using System.Security.Claims;
+using System.Text;
 using System.Text.Json;
 
 namespace Backend.Tests
@@ -8,10 +13,14 @@ namespace Backend.Tests
     public class ProductsControllerTests : IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly HttpClient _client;
+        private readonly IConfiguration _configuration;
 
         public ProductsControllerTests(WebApplicationFactory<Program> factory)
         {
             _client = factory.CreateClient(); // This starts the test server
+            _configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
         }
 
         [Fact]
@@ -45,6 +54,10 @@ namespace Backend.Tests
                 "application/json"
             );
 
+            // Ajouter l'en-tête d'autorisation avec le rôle Admin
+            var token = GetAdminToken();
+            _client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
             // Act: Envoyer une requête PUT pour mettre à jour un produit existant
             var response = await _client.PutAsync("/api/products/1", jsonContent);
 
@@ -66,11 +79,40 @@ namespace Backend.Tests
                 "application/json"
             );
 
+            // Ajouter l'en-tête d'autorisation avec le rôle Admin
+            var token = GetAdminToken();
+            _client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
             // Act: Envoyer une requête PUT pour tenter de mettre à jour un produit inexistant
             var response = await _client.PutAsync("/api/products/999", jsonContent);
 
             // Assert: Vérifier que le code de statut est 404 (NotFound)
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+        }
+
+        // Méthode fictive pour obtenir un jeton d'administrateur
+
+        string GetAdminToken()
+        {
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Name, "admin"),
+                new Claim(ClaimTypes.Role, "Admin"),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.Now.AddHours(1),
+                signingCredentials: creds
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }

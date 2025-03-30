@@ -1,0 +1,31 @@
+/* app.component.css */
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .error-message mat-icon {
+    margin-right: 8px;
+  }
+  
