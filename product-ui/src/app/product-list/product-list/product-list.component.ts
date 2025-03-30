@@ -8,6 +8,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'; 
+import { MatIconModule } from '@angular/material/icon';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-product-list',
@@ -19,6 +21,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatFormFieldModule, 
     MatInputModule,
     MatSlideToggleModule,
+    MatIconModule,
     FormsModule,
   ],
   providers: [ProductService],
@@ -30,7 +33,7 @@ export class ProductListComponent implements OnInit {
   isAdmin: boolean = false; // Default isAdmin is false
   selectedProduct: Product | null = null;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private authService: AuthService) { }
 
   ngOnInit(): void {
     // Check role from localStorage and update isAdmin accordingly
@@ -78,5 +81,9 @@ export class ProductListComponent implements OnInit {
   // Cancel the product selection (clear the selected product)
   cancel(): void {
     this.selectedProduct = null
+  }
+
+  onLogout(){
+    this.authService.logout()
   }
 }

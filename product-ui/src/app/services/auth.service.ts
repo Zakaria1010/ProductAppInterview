@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthService {
   private apiUrl = `${environment.apiUrl}/api/auth/login`
   private jwtToken: string | null = null
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   login(username: string, password: string, credentials: { username: string; password: string; }): Observable<any> {
     return this.http.post<any>(this.apiUrl, credentials).pipe(
@@ -26,9 +27,10 @@ export class AuthService {
   }
 
   logout(): void {
-    this.jwtToken = null;
+    this.jwtToken = null
     localStorage.removeItem('token')
     localStorage.removeItem('role')
+    this.router.navigate(['/'])
   }
 
   getToken(): string | null {

@@ -5,6 +5,23 @@
   padding: 20px;
 }
 
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Align the items at the left and right */
+  align-items: center; /* Center the items vertically */
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  margin: 0; /* Remove the default margin */
+  font-size: 24px;
+}
+
+button {
+  margin-left: 10px; /* Adds spacing between buttons */
+}
+
 .example-margin {
   margin: 10px;
 }
