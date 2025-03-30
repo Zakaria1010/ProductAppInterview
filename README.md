@@ -16,3 +16,8 @@ Session Admin avec possibilté de modification des produits:
 Composant de modification du produit :
 ![image](https://github.com/user-attachments/assets/ec386a1a-2347-43e3-bc5c-f8a80c241e72)
 
+Ajout de login page pour se connecter comme admin/utilisateur
+
+![image](https://github.com/user-attachments/assets/8b3a3744-e77c-4fd3-9559-cf4a6163913e)
+
+
