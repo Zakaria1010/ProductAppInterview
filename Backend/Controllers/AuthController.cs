@@ -24,9 +24,9 @@ namespace Backend.Controllers
         {
             // This should be replaced with your actual user authentication logic
             if ((login.Username == "admin" && login.Password == "admin") ||
-                (login.Username == "user" && login.Password == "user")) // Example check for admin or simple user
+                (login.Username == "user" && login.Password == "user"))
             {
-                var role = login.Username == "admin" ? "admin" : "user"; // Set role based on the username
+                var role = login.Username == "admin" ? "admin" : "user";
                 var token = GenerateJwtToken(login.Username, role); // Pass the role to the token generator
                 return Ok(new { token, role }); // Return token and role in the response
             }
@@ -41,7 +41,7 @@ namespace Backend.Controllers
             var claims = new[]
             {
                 new Claim(ClaimTypes.Name, username),
-                new Claim(ClaimTypes.Role, role), // Example: add a role claim
+                new Claim(ClaimTypes.Role, role)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"]));
