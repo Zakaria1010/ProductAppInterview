@@ -7,8 +7,11 @@ Projet Backend.Tests
 Projet product-ui pour l'inteface utilisateur
 
 Login page pour se connecter comme admin/utilisateur
+![image](https://github.com/user-attachments/assets/136bbb6e-05ff-4155-b08e-328171dd1bdb)
 
-![image](https://github.com/user-attachments/assets/8b3a3744-e77c-4fd3-9559-cf4a6163913e)
+Logout 
+![image](https://github.com/user-attachments/assets/66dbbb33-61bd-40a4-9003-30c9972cd451)
+
 
 Session utilisateur : 
 ![image](https://github.com/user-attachments/assets/f470de86-a273-4e46-a95c-41783d485297)
