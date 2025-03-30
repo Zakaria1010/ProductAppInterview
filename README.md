@@ -19,5 +19,9 @@ Session Admin avec possibilté de modification des produits:
 Composant de modification du produit :
 ![image](https://github.com/user-attachments/assets/ec386a1a-2347-43e3-bc5c-f8a80c241e72)
 
+ Mise a jour de données (persistance de données dans un fichier products.json)
+ 
+![image](https://github.com/user-attachments/assets/fcc589e7-4dae-4422-8362-59ee57ff87a2)
+
 
 
