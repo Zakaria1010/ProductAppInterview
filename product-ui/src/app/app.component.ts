@@ -20,5 +20,5 @@ import { AuthService } from './services/auth.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'product-ui';
+  title = 'product-ui'
 }

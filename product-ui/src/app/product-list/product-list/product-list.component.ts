@@ -34,8 +34,8 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     // Check role from localStorage and update isAdmin accordingly
-    const storedRole = localStorage.getItem('role');
-    this.isAdmin = storedRole === 'admin'; // Update to check for 'admin' role
+    const storedRole = localStorage.getItem('role')
+    this.isAdmin = storedRole === 'admin' // Update to check for 'admin' role
     this.loadProducts(); // Load products initially
   }
 
@@ -43,18 +43,18 @@ export class ProductListComponent implements OnInit {
   toggleRole(): void {
     if (this.isAdmin) {
       this.isAdmin = false;
-      localStorage.setItem('role', 'user'); // Store 'user' role in localStorage
-      console.log('Switched to User role.');
+      localStorage.setItem('role', 'user') // Store 'user' role in localStorage
+      console.log('Switched to User role.')
     } else {
       this.isAdmin = true;
-      localStorage.setItem('role', 'admin'); // Store 'admin' role in localStorage
-      console.log('Switched to Admin role.');
+      localStorage.setItem('role', 'admin') // Store 'admin' role in localStorage
+      console.log('Switched to Admin role.')
     }
   }
 
   // Select product for editing or viewing details
   selectProduct(product: Product): void {
-    this.selectedProduct = { ...product };
+    this.selectedProduct = { ...product }
   }
 
   // Load products from the service
@@ -71,12 +71,12 @@ export class ProductListComponent implements OnInit {
         this.loadProducts(); // Reload products after update
       });
     } else {
-      alert('Vous devez être admin pour modifier les produits.'); // Alert if user is not admin
+      alert('Vous devez être admin pour modifier les produits.') 
     }
   }
 
   // Cancel the product selection (clear the selected product)
   cancel(): void {
-    this.selectedProduct = null;
+    this.selectedProduct = null
   }
 }

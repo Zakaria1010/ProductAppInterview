@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = `${environment.apiUrl}/api/auth/login`;
+  private apiUrl = `${environment.apiUrl}/api/auth/login`
   private jwtToken: string | null = null
 
   constructor(private http: HttpClient) {}
@@ -19,7 +19,7 @@ export class AuthService {
         if (response.token) {
           this.jwtToken = response.token;
           localStorage.setItem('token', response.token)
-          localStorage.setItem('role', response.role);
+          localStorage.setItem('role', response.role)
         }
       })
     );
@@ -39,7 +39,7 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    const token = this.getToken();
-    return !!token;
+    const token = this.getToken()
+    return !!token
   }
 }

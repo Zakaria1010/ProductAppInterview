@@ -11,12 +11,6 @@ namespace ProductApp.Controllers
     {
         private static string _filePath = "products.json";
         private static List<Product> _products = LoadProducts();
-        //private static List<Product> _products = new List<Product>
-        //{
-        //    new Product { Id = 1, Name = "Product 1", Price = 10, Description = "Description 1" },
-        //    new Product { Id = 2, Name = "Product 2", Price = 20, Description = "Description 2" },
-        //    new Product { Id = 3, Name = "Product 3", Price = 30, Description = "Description 3" }
-        //};
 
         [HttpGet]
         public IActionResult GetProducts()
@@ -44,7 +38,7 @@ namespace ProductApp.Controllers
         }
 
         // Load products from the file
-        private static List<Product> LoadProducts()
+        static List<Product> LoadProducts()
         {
             if (System.IO.File.Exists(_filePath))
             {
@@ -55,7 +49,7 @@ namespace ProductApp.Controllers
         }
 
         // Save products to the file
-        private static void SaveProducts()
+        static void SaveProducts()
         {
             var json = JsonSerializer.Serialize(_products);
             System.IO.File.WriteAllText(_filePath, json);

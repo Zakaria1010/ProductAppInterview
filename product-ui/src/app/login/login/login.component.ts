@@ -24,9 +24,9 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  username = '';
-  password = '';
-  errorMessage = '';
+  username = ''
+  password = ''
+  errorMessage = ''
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -34,11 +34,11 @@ export class LoginComponent {
     this.authService.login(this.username, this.password, { username: this.username, password: this.password }).subscribe(
       (response) => {
         // Redirect user to product  page
-        this.router.navigate(['/products']);
+        this.router.navigate(['/products'])
       },
       (error) => {
         // Handle login error
-        this.errorMessage = 'Invalid credentials';
+        this.errorMessage = 'Invalid credentials'
       }
     );
   }

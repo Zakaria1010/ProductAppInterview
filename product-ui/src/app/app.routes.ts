@@ -6,8 +6,8 @@ import { LoginComponent } from './login/login/login.component';
 export const routes: Routes = [
     { path: 'login', component: LoginComponent }, // Route for Product List
     { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
-    { path: 'products', component: ProductListComponent }, // Route for Product List
-];
+    { path: 'products', component: ProductListComponent } // Route for Product List
+]
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
